@@ -14,6 +14,11 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/recipes/new' do
+    @params = params
+    redirect '/recipes/:id'
+  end
+
+  get '/recipes/:id' do
     erb :show
   end
 
